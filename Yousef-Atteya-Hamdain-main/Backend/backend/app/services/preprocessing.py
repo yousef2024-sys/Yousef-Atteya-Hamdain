@@ -2,7 +2,7 @@ import pandas as pd
 
 from app.schemas.prediction import PredictionRequest
 
-# Must match the columns/order used when training the model in the notebook.
+
 NUMERIC_FEATURES = ["carpet_area_sqft", "floor_num", "bathroom", "balcony"]
 CATEGORICAL_FEATURES = ["location_grouped", "Furnishing", "Transaction", "Ownership", "facing"]
 

@@ -6,7 +6,6 @@ from app.main import app
 
 @pytest.fixture()
 def client():
-    # Use a context manager so FastAPI's lifespan (which loads the model) runs.
     with TestClient(app) as c:
         yield c
 
@@ -37,7 +36,6 @@ def test_predict_happy_path(client):
 
 
 def test_predict_invalid_input(client):
-    # Missing required fields -> FastAPI/Pydantic should return 422
     payload = {"location": "thane"}
     response = client.post("/predict", json=payload)
     assert response.status_code == 422

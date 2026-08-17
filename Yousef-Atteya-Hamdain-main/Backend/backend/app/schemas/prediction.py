@@ -2,7 +2,6 @@ from pydantic import BaseModel, Field
 
 
 class PredictionRequest(BaseModel):
-    """Input features required by the trained model pipeline."""
 
     location: str = Field(..., description="City/area name, e.g. 'thane'")
     carpet_area_sqft: float = Field(..., gt=0, description="Carpet area in square feet")
