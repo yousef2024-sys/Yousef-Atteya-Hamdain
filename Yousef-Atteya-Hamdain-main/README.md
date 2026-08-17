@@ -4,7 +4,7 @@ Predict Indian residential property prices from listing details (location, area,
 floor, bathrooms, furnishing, etc.) using a scikit-learn regression model served by a
 FastAPI backend and consumed by a React + TypeScript frontend.
 
-## Overview
+# Overview
 
 The project has three parts:
 
@@ -34,7 +34,7 @@ The project has three parts:
                                                           └──────────────────────┘
 ```
 
-## Tech stack
+# Tech stack
 
 | Layer      | Tech |
 |------------|------|
@@ -42,7 +42,7 @@ The project has three parts:
 | Backend    | FastAPI, Pydantic v2, uvicorn, pytest |
 | Frontend   | React 18, TypeScript, Vite, react-router-dom |
 
-## Project structure
+# Project structure
 
 ```
 house-price-project/
@@ -86,7 +86,7 @@ house-price-project/
 > *unpickled* (in `backend/`), so the file is copied rather than shared via a package.
 > If you retrain the model, re-copy the file too.
 
-## Dataset
+# Dataset
 
 **House Price** by Juhi Bhojani —
 https://www.kaggle.com/datasets/juhibhojani/house-price
@@ -108,7 +108,7 @@ https://www.kaggle.com/datasets/juhibhojani/house-price
   ```
   Then rename the extracted CSV to `house_prices.csv` if needed.
 
-## Setup — Notebook
+# Setup — Notebook
 
 ```bash
 cd notebooks
@@ -151,7 +151,7 @@ Run the tests:
 pytest
 ```
 
-### Environment variables (backend `.env`)
+# Environment variables (backend `.env`)
 
 | Variable          | Default                      | Description                              |
 |-------------------|-------------------------------|-------------------------------------------|
@@ -169,7 +169,7 @@ npm run dev
 # open http://localhost:5173
 ```
 
-### Environment variables (frontend `.env`)
+# Environment variables (frontend `.env`)
 
 | Variable               | Default                  | Description                  |
 |-------------------------|---------------------------|-------------------------------|
@@ -234,7 +234,7 @@ curl -X POST http://localhost:8000/predict \
 Unknown locations (not in the top-50 seen during training) are automatically mapped to
 `"other"` — no error, just a less location-specific prediction.
 
-## Model metrics
+# Model metrics
 
 Three models were trained on `log1p(price)` and compared on the held-out test set
 (20% split, 60,000-row training sample):
@@ -250,12 +250,12 @@ interactions between location, area, and amenities far better than the linear
 baseline, without the shorter, shallower trees that limited the Gradient Boosting run.
 A 5-fold cross-validation of the winning model is included in the notebook (§2.5).
 
-## Screenshots
+# Screenshots
 
 _Add screenshots of the running app here (home form + result page) after you run it
 locally — e.g. `docs/screenshot-home.png`, `docs/screenshot-result.png`._
 
-## Publishing to GitHub
+# Publishing to GitHub
 
 ```bash
 git init
